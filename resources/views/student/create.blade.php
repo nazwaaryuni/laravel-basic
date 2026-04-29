@@ -2,6 +2,7 @@
     <x-slot:title>{{ $title }}</x-slot>
     <form method="POST" action="{{ route('student.store') }}">
         @csrf
+
         <div class="mb-3">
             <label for="name" class="form-label">Nama Mahasiswa</label>
             <input type="teks" class="form-control @error('name') is-invalid @enderror" id="name" name="name"

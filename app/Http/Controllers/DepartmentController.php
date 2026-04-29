@@ -14,7 +14,7 @@ class DepartmentController extends Controller
     {
         return view('department.index', [
             'title' => 'Department',
-            'department' => Department::latest()->get(),
+            'departments' => Department::latest()->get(),
             //'departments' => Department::orderBy('name', 'asc')->get(),
             ]);
     }
@@ -40,7 +40,11 @@ class DepartmentController extends Controller
      */
     public function show(Department $department)
     {
-        //
+        return view('department.show', [
+            'title' => 'Detail Department',
+            'department' => $department, 
+            //'departments' => Department::orderBy('name', 'asc')->get(),
+            ]);
     }
 
     /**
